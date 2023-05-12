@@ -7,9 +7,9 @@ Write a function `createCounter`. It should accept an initial integer **init**. 
 
 The three functions are:
 
-[X] **increment()** increases the current value by 1 and then returns it.
-[X] **decrement()** reduces the current value by 1 and then returns it.
-[X] **reset()** sets the current value to init and then returns it.
+- [X] **increment()** increases the current value by 1 and then returns it.
+- [X] **decrement()** reduces the current value by 1 and then returns it.
+- [X] **reset()** sets the current value to init and then returns it.
  
 
 ### Example 1:
