@@ -10,6 +10,8 @@ var constant = function (n, i) {
     return 42;
 }
 
+// Using User defined function
+
 var map = function (arr, fn) {
     newarr = [];
     for (let index = 0; index < arr.length; index++) {
@@ -18,13 +20,30 @@ var map = function (arr, fn) {
     return newarr;
 };
 
+
 arr = [1, 2, 3];
-const testCaseI = map(arr, plusone);
+let testCaseI = map(arr, plusone);
 console.log(testCaseI);
 
-const testCaseII = map(arr, plusI);
+let testCaseII = map(arr, plusI);
 console.log(testCaseII);
 
 arr = [10, 20, 30];
-const testCaseIII = map(arr, constant);
+let testCaseIII = map(arr, constant);
 console.log(testCaseIII);
+
+
+
+// Using Array.map method
+
+arr = [1, 2, 3];
+let testCaseIV = arr.map(plusone);
+console.log(testCaseIV);
+
+arr = [1, 2, 3];
+let testCaseV = arr.map(plusI);
+console.log(testCaseV);
+
+arr = [10, 20, 30];
+let testCaseVI = arr.map(constant);
+console.log(testCaseVI);
