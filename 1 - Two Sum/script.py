@@ -1,5 +1,8 @@
+from typing import List
+
+
 class Solution:
-    def twoSum(self, nums: list, target: int) -> list:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
         outcome = {}
         for num in range(len(nums)):
             complement = target - nums[num]
