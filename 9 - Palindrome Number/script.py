@@ -1,13 +1,11 @@
 ### Naive / Brute force Approach : Converting to string
 
+
 class Solution:
     def isPalindrome(self, x: int) -> bool:
         l2r = str(x)
         r2l = l2r[::-1]
-        if l2r == r2l:
-            return True
-        else:
-            return False
+        return l2r == r2l
 
 
 s = Solution()
