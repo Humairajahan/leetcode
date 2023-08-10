@@ -10,6 +10,20 @@ class Solution:
         return False
 
 
+# Optimized Approach
+class Solution:
+    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+        z = {}
+        for idx in range(len(nums)):
+            if nums[idx] not in z:
+                z[nums[idx]] = idx 
+            else:
+                if abs(z[nums[idx]] - idx) <= k:
+                    return True
+                z[nums[idx]] = idx
+        return False
+    
+
 s = Solution()
 
 test_case_1 = s.containsNearbyDuplicate(nums=[1, 2, 3, 1], k=3)
