@@ -37,7 +37,7 @@ class ListNode:
 
 # Floyd's cycle-finding (Tortoise & Hare) algorithm : Two pointer Technique
 # Time Complexity O(n)
-# Memory Complexity O(1)
+# Space Complexity O(1)
 
 
 class Solution:
@@ -49,6 +49,24 @@ class Solution:
             fast = fast.next.next
             if slow == fast:
                 return True
+        return False
+
+
+# Set Approach
+# Time Complexity O(n)
+# Space Complexity O(n)
+
+
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        seen = set()
+        curr = head
+
+        while curr:
+            if curr in seen:
+                return True
+            seen.add(curr)
+            curr = curr.next
         return False
 
 
