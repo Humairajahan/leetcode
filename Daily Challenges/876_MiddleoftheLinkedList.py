@@ -76,6 +76,20 @@ class Solution:
         return z[middle_node]
 
 
+# Two Pointers
+# Time Complexity O(n/2) simplifying to O(n)
+# Space Complexity O(1)
+
+
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        slow, fast = head, head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        return slow
+
+
 # Example
 # ---------
 # Input: head = [1, 2, 3]
