@@ -52,6 +52,30 @@ class Solution:
         return curr
 
 
+# Set Approach
+# Time Complexity O(n)
+# Space Complexity O(n)
+
+
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        length = 0
+        z = {}
+        curr = head
+
+        while curr:
+            length += 1
+            z[length] = curr
+            curr = curr.next
+
+        if length % 2 == 0:
+            middle_node = int(length / 2) + 1
+        else:
+            middle_node = int(length / 2 + 0.5)
+
+        return z[middle_node]
+
+
 # Example
 # ---------
 # Input: head = [1, 2, 3]
