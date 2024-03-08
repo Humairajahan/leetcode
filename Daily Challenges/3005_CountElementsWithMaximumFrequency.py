@@ -25,6 +25,45 @@
 from typing import List
 
 
+# Two Pointer Approach
+# Time Complexity O(nlogn)
+# Space Complexity O(n)
+    
+
+class Solution:
+    def maxFrequencyElements(self, nums: List[int]) -> int:
+        nums.sort()
+        slow, fast = 0, 1
+        length = len(nums)
+        
+        if length == 1:
+            return 1
+
+        z = {}
+        max_freq = 0
+        curr = 1
+
+        while fast < length:    
+            if nums[slow] == nums[fast]:
+                fast += 1
+                curr += 1
+            else:
+                z[nums[slow]] = curr
+                max_freq = max(max_freq, curr)
+                curr = 1
+                slow = fast
+                fast += 1
+        if nums[slow] not in z:
+            z[nums[slow]] = curr
+            max_freq = max(max_freq, curr)
+        
+        n = 0
+        for i in z:
+            if z[i] == max_freq:
+                n += max_freq
+        return n
+
+
 # Greedy Approach: Hash Table
 # Time Complexity O(n)
 # Space Complexity O(n)
