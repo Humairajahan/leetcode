@@ -19,6 +19,24 @@
 from typing import List
 
 
+# Sliding Window Approach
+# Time complexity O(n**2)
+# Space complexity O(n)
+
+
+class Solution:
+    def findMaxLength(self, nums: List[int]) -> int:
+        max_len = 0
+        num_iterations, r = divmod(len(nums), 2)
+        for window in range(num_iterations):
+            window_size = 2 * window
+            for idx in range(len(nums) - window_size - 1):
+                sub_arr = nums[idx : idx + 2 * (window + 1)]
+                if sub_arr.count(1) == sub_arr.count(0):
+                    max_len = max(max_len, len(sub_arr))
+        return max_len
+
+
 # HashMap
 # Time complexity O(n)
 # Space complexity O(n)
