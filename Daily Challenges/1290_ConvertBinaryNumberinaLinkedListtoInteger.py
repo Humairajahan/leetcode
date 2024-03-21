@@ -25,7 +25,7 @@ class ListNode:
         self.next = next
 
 
-# Array
+# Array (Power of 2)
 # Time complexity O(n)
 # Space complexity O(n)
 
