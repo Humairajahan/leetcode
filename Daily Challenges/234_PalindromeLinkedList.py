@@ -38,6 +38,41 @@ class Solution:
         return arr == arr[::-1]
 
 
+# Tortoise-Hare algorithm
+# Reverse Linked List
+# Two pointer approach
+
+# Time complexity O(n)
+# Space complexity O(1)
+
+
+class Solution:
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+
+        # Find middle node (slow)
+        slow, fast = head, head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        # Reverse the second half (slow - fast)
+        prev = None
+        while slow:
+            nxt_node = slow.next
+            slow.next = prev
+            prev = slow
+            slow = nxt_node
+
+        # Check palindrome
+        left, right = head, prev
+        while right:
+            if right.val != left.val:
+                return False
+            left = left.next
+            right = right.next
+        return True
+
+
 node1 = ListNode(1)
 node2 = ListNode(1)
 node3 = ListNode(2)
