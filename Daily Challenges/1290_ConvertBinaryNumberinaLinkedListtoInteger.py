@@ -44,6 +44,20 @@ class Solution:
         return bin_num
 
 
+# Greedy approach
+# Time complexity O()
+# Space complexity O()
+
+
+class Solution:
+    def getDecimalValue(self, head: ListNode) -> int:
+        bin_num = 0
+        while head:
+            bin_num = bin_num * 2 + head.val
+            head = head.next
+        return bin_num
+
+
 node1 = ListNode(1)
 node2 = ListNode(0)
 node3 = ListNode(1)
