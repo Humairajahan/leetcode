@@ -41,6 +41,20 @@ class Solution:
                 z[i] = 1
 
 
+# Time limit exceeded
+# Time complexity O(n**2)
+# Space complexity O(1)
+
+
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        n = len(nums) - 1
+        for i in range(1, n + 1):
+            if i in nums:
+                nums.remove(i)
+        return nums[0]
+
+
 print(Solution().findDuplicate(nums=[1, 3, 4, 2, 2]))
 
 print(Solution().findDuplicate(nums=[3, 1, 3, 4, 2]))
